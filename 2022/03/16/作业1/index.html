@@ -33,11 +33,11 @@
 </div>
 
   <div class="navi">
-    <a id="navi_item" href="/#" class="menu-item-link">Home</a>
-    <a id="navi_item" href="/tags" class="menu-item-link">Tags</a>
-    <a id="navi_item" href="/about" class="menu-item-link">About</a>
+    <a id="navi_item" href="/#" class="menu-item-link">主页</a>
+    <a id="navi_item" href="/tags" class="menu-item-link">标签</a>
+    <a id="navi_item" href="/about" class="menu-item-link">关于</a>
     
-        <a id="navi_item" href="/friendlink" class="menu-item-link">Friendlink</a>
+        <a id="navi_item" href="/friendlink" class="menu-item-link">友链</a>
     
 </div>
 
@@ -67,11 +67,22 @@
   
 
   <div id="post_content">
-    <h1 id="云使能技术主要包括哪些技术组件-简要说明其关键特征"><a href="#云使能技术主要包括哪些技术组件-简要说明其关键特征" class="headerlink" title="云使能技术主要包括哪些技术组件?简要说明其关键特征"></a>云使能技术主要包括哪些技术组件?简要说明其关键特征</h1><blockquote>
-<p>11111</p>
-</blockquote>
-<h1 id="列举至少3种虚拟化软件，并概括其特点"><a href="#列举至少3种虚拟化软件，并概括其特点" class="headerlink" title="列举至少3种虚拟化软件，并概括其特点"></a>列举至少3种虚拟化软件，并概括其特点</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MixText</span>(nn.Module):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, num_labels=<span class="number">2</span>, mix_option=<span class="literal">False</span></span>):</span><br><span class="line">        <span class="built_in">super</span>(MixText, self).__init__()</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> mix_option:</span><br><span class="line">            self.bert = BertModel4Mix.from_pretrained(<span class="string">&#x27;bert-base-uncased&#x27;</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            self.bert = BertModel.from_pretrained(<span class="string">&#x27;bert-base-uncased&#x27;</span>)</span><br><span class="line"></span><br><span class="line">        self.linear = nn.Sequential(nn.Linear(<span class="number">768</span>, <span class="number">128</span>),</span><br><span class="line">                                    nn.Tanh(),</span><br><span class="line">                                    nn.Linear(<span class="number">128</span>, num_labels))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, x, x2=<span class="literal">None</span>, l=<span class="literal">None</span>, mix_layer=<span class="number">1000</span></span>):</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> x2 <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">            all_hidden, pooler = self.bert(x, x2, l, mix_layer)</span><br><span class="line"></span><br><span class="line">            pooled_output = torch.mean(all_hidden, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            all_hidden, pooler = self.bert(x)</span><br><span class="line"></span><br><span class="line">            pooled_output = torch.mean(all_hidden, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">        predict = self.linear(pooled_output)</span><br><span class="line">        <span class="comment"># 返回的是(num_labels,), 即对各标签的预测概率</span></span><br><span class="line">        <span class="keyword">return</span> predict</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
+    <h1 id="云使能技术主要包括哪些技术组件-简要说明其关键特征"><a href="#云使能技术主要包括哪些技术组件-简要说明其关键特征" class="headerlink" title="云使能技术主要包括哪些技术组件?简要说明其关键特征"></a>云使能技术主要包括哪些技术组件?简要说明其关键特征</h1><p><strong>技术组件:</strong></p>
+<ul>
+<li>Web技术</li>
+<li>多租户技术</li>
+<li>服务技术</li>
+<li>宽带网络和Internet架构</li>
+<li>数据中心技术</li>
+<li>虚拟化技术</li>
+</ul>
+<p><strong>关键特征:</strong></p>
+<p>云必须连接到网络，利用数据中心技术集中存放IT资源，应用虚拟化技术将物理IT资源转换为虚拟IT资源，从而提供了硬件无关性、服务器整合、资源复制、对资源更强的支持和可扩展性；使用Web技术作为云服务的实现介值和管理接口；设计多租户技术使多个用户在逻辑上同时访问一个应用；其中的服务技术是云计算的基石，形成了“作为服务”的云交付模型的基础。</p>
+<h1 id="列举至少3种虚拟化软件，并概括其特点"><a href="#列举至少3种虚拟化软件，并概括其特点" class="headerlink" title="列举至少3种虚拟化软件，并概括其特点"></a>列举至少3种虚拟化软件，并概括其特点</h1><ul>
+<li>VMware: 商用的虚拟化软件, 支持硬件虚拟化</li>
+<li>VirtualBox: 开源的虚拟化软件, 支持硬件虚拟化, 支持软件虚拟化</li>
+<li>Docker: 基于容器的虚拟化技术, 轻量级, 快速就绪, 弱安全</li>
+</ul>
 
   </div>
 
